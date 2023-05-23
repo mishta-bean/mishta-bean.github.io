@@ -15,52 +15,9 @@ Description: A .css file containing all of the styles
             div elements, pictures, as well as for
             lists and tables.
 
-*/
-
-/* 
-SOURCES CITED:
-
-    learned text placement information from this article:
-    https://www.w3schools.com/howto/howto_css_image_text.asp
-
-    information on making content fill the page was found here:
-    https://stackoverflow.com/questions/20531013
-
-    margin spacing info was found here:
-    https://stackoverflow.com/questions/9547291
-
-    tables were inspired from this article:
-    https://www.w3schools.com/html/html_tables.asp
-
-    css file creation and linking learned from here:
-    https://www.w3schools.com/css/css_howto.asp
-
-
-IMAGE SOURCES:
-
-    Image of Chepstow Castle was found here: 
-    https://en.wikipedia.org/wiki/Chepstow_Castle
-
-    Cover image of MediEvil was found here:
-    https://www.amazon.com/MediEvil-Playstation/dp/B00000I1BK
-
-    Cover image of Castlevania: Symphony of the Night was found here:
-    https://90sreviewer.com/castlevania-symphony-of-the-night-retrospective-review/    
-
-    Cover image for Spyro the Dragon was found here:
-    https://en.wikipedia.org/wiki/Spyro_the_Dragon
-
-    Cover image for Crash Bandicoot 2: Cortex Strikes Back was found here:
-    https://en.wikipedia.org/wiki/Crash_Bandicoot_2:_Cortex_Strikes_Back
-
-    Elden Ring cover image was found here:
-    https://www.playstation.com/en-us/games/elden-ring/
-
-    Team Fortress 2 cover art found here:
-    https://store.steampowered.com/app/440/Team_Fortress_2/
-
-    Halo 3 cover art was found here:
-    https://en.wikipedia.org/wiki/Halo_3
+            
+css file creation and linking learned from here:
+https://www.w3schools.com/css/css_howto.asp
 
 */
 
@@ -77,6 +34,8 @@ body{
     height: 3500px;
     width: 100%;
 
+    /* learned text placement information from this article:
+    https://www.w3schools.com/howto/howto_css_image_text.asp */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -117,6 +76,8 @@ h1 {font-weight: bolder;
 p { font-weight: normal;
     color: rgb(224, 224, 224);
 
+    /* margin spacing info was found here:
+    https://stackoverflow.com/questions/9547291 */
     margin-left: 10%;
     margin-right: 10%;
     text-align: center;
