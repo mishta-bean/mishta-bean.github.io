@@ -1,0 +1,107 @@
+/*File: styles.css
+
+Assignment: Creating a multiplication table
+
+Written by: Max Tighe, 
+    Computer Science Student at UMass Lowell
+    contact: max_tighe@student.uml.edu
+
+Date created: 6/10/2023
+
+Date updated: 6/16/2023
+
+Description: A cascading style sheet for
+        the appearance of index.html.
+*/
+
+body {
+    background-image: linear-gradient(to top,rgb(255,255,255), rgb(0,0,0));
+
+    background-repeat:no-repeat;
+
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 5%;
+
+    font-weight: bolder;
+}
+
+h4 {
+    text-align: center;
+}
+
+table, th, tr, td {
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+
+    text-align: center;
+
+    font-size:large;
+
+    padding: 12px;
+}
+
+p {
+    text-align: center;
+
+    width: 80%;
+
+    margin:auto;
+}
+
+.container {
+    background-color: rgba(255,255,255,0.6);
+
+    border-radius: 8px;
+
+    margin-top: 5%;
+
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.warning-box {
+    color: red;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+#mult-table-container {
+    width: 80%;
+    height: 50%;
+    max-height: 800px;
+
+    margin:auto;
+    margin-top: 2%;
+    margin-bottom: 10%;
+
+    overflow:auto;
+}
+
+#errorMessage {
+
+    width: 50%;
+
+    margin: auto;
+
+    color: red;
+    font-weight: bolder;
+    font-size: large;
+    text-align: center;
+}
+
+#result-message {
+    text-align: center;
+
+    margin-top: 5%;
+}
+
+#important {
+    font-weight: bold;
+    font-style: italic;
+}
