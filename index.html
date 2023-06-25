@@ -1,7 +1,7 @@
 <!-- 
 File: index.html
 
-Assignment: Creating a multiplication table
+Assignment: HW4 Part 2, adding jQuery sliders and tabs
 
 Written by: Max Tighe, 
     Computer Science Student at UMass Lowell
@@ -9,7 +9,7 @@ Written by: Max Tighe,
 
 Date created: 6/10/2023
 
-Date updated: 6/16/2023
+Date updated: 6/24/2023
 
 Description: A website for creating multiplication tables.
         Users may enter numbers into four fields to designate
@@ -19,6 +19,16 @@ Description: A website for creating multiplication tables.
         the "submit" button.
         this project uses javascript for website's table generation,
         named "myScript.js."
+
+        This has been updated to utilize jQuery's Input Validation
+        plugin for input sanitization, as well as jQuery's slider
+        and tab plugins.
+
+        jQuery's Input Validation plugin can be found here:
+        https://jqueryvalidation.org/
+
+        jQuery's UI library can be found here:
+        https://cdnjs.com/libraries/jqueryui
 -->
 
 <!DOCTYPE html>
@@ -30,10 +40,15 @@ Description: A website for creating multiplication tables.
         
         <!-- Latest compiled and minified CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c="
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
         <link href="css/styles.css" rel="stylesheet">
     </head>
 
-    <body>
+    <body onload="init()">
         <div class="container">
 
             <h2>Multiplication Table</h2>
@@ -48,6 +63,12 @@ Description: A website for creating multiplication tables.
                 </p>
 
             <!-- rules -->
+            <br>
+
+                <p id="important">
+                    Each field may have a value between -99 and 99.
+                </p>
+
             <br>
 
                 <p id="important">
@@ -68,7 +89,7 @@ Description: A website for creating multiplication tables.
 
             <br>
 
-            <div class="form-group">
+            <form class="form-group" id="multInputs">
                 <!-- Fields for the user to specify 
                 the horizontal and vertical multipliers -->
                 
@@ -80,11 +101,18 @@ Description: A website for creating multiplication tables.
                     <div class="row">
                         <div class="col-sm-2 offset-4">
                             <label>begin</label> 
-                            <input class="form-control" id="hBeginMult" value="1">
+                            <div id="horiz-slider-begin"></div>
+                            <input class="form-control" id="hBeginMult" value="1"
+                                    type="number" max="99" min="-99" lessThan="hEndMult" required>
                         </div>
+
+                        <div class="col-sm-1"></div>
+
                         <div class="col-sm-2">
                             <label>end</label> 
-                            <input class="form-control" id="hEndMult" value="5">
+                            <div id="horiz-slider-end"></div>
+                            <input class="form-control" id="hEndMult" value="5"
+                                    type="number" max="99" min="-99" required>
                         </div>
                     </div>
                 </div>
@@ -98,12 +126,19 @@ Description: A website for creating multiplication tables.
 
                     <div class="row">
                         <div class="col-sm-2 offset-4">
-                            <label>begin</label> 
-                            <input class="form-control" id="vBeginMult" value="1">
+                            <label>begin</label>
+                            <div id="vert-slider-begin"></div>
+                            <input class="form-control" id="vBeginMult" value="1"
+                                type="number" max="99" min="-99" lessThan="vEndMult" required>
                         </div>
+
+                        <div class="col-sm-1"></div>
+
                         <div class="col-sm-2">
-                            <label>end</label> 
-                            <input class="form-control" id="vEndMult" value="5">
+                            <label>end</label>
+                            <div id="vert-slider-end"></div>
+                            <input class="form-control" id="vEndMult" value="5"
+                                    type="number" max="99" min="-99" required>
                         </div>
                     </div>
                 </div>
@@ -117,16 +152,35 @@ Description: A website for creating multiplication tables.
 
                 <!-- submit button -->
                 <div class="col text-center">
-                    <button type="button" class="btn btn-secondary" onclick="checkInputs()">Submit</button>
+                    <button id="saveBtn" type="button" class="btn btn-secondary" onclick="save()" disabled="true">Save Table</button>
+                </div>
+
+                <!-- result table section -->
+                <p id="result-message"></p>
+
+                <div id="mult-table-container"></div>
+
+                <hr>
+
+                <!-- saved wallpapers section -->
+                <p>Saved Tables</p>
+
+                <br>
+
+                <div class="col text-center">
+                    <button id="deleteBtn" type="button" class="btn btn-secondary" onclick="deleteMultTabs()">Delete Selected</button>
+                </div>
+
+                <div id="saved-tables">
+                    <ul id="tabs-list">
+                    </ul>
                 </div>
 
             </div>
-
-            <p id="result-message"></p>
-
-            <div id="mult-table-container"></div>
-
+            
         </div>
+
+        <script>$("#multInputs").validate();</script>
         <script src="js/myScripts.js"></script>
     </body>
 </html>

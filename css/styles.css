@@ -1,6 +1,6 @@
 /*File: styles.css
 
-Assignment: Creating a multiplication table
+Assignment: HW4 Part 2, adding jQuery sliders and tabs
 
 Written by: Max Tighe, 
     Computer Science Student at UMass Lowell
@@ -8,7 +8,7 @@ Written by: Max Tighe,
 
 Date created: 6/10/2023
 
-Date updated: 6/16/2023
+Date updated: 6/24/2023
 
 Description: A cascading style sheet for
         the appearance of index.html.
@@ -71,6 +71,27 @@ p {
     text-align: center;
 }
 
+.closeButton {
+    margin:5px;
+
+    color: black;
+    background-color: darkgray;
+}
+
+.checkButton {
+
+    width: 20px;
+    height: 20px;
+
+    margin: 5px;
+
+    margin-bottom: 0px;
+    margin-top: 10px;
+
+    border-color: black;
+    border-width: 1px;
+}
+
 #mult-table-container {
     width: 80%;
     height: 50%;
@@ -104,4 +125,8 @@ p {
 #important {
     font-weight: bold;
     font-style: italic;
+}
+
+#deleteBtn {
+    margin:auto;
 }
