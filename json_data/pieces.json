@@ -1,0 +1,30 @@
+{ 
+	"pieces":[
+		{"letter": "A", "amount":9},
+		{"letter": "B", "amount":2},
+		{"letter": "C", "amount":2},
+		{"letter": "D", "amount":4},
+		{"letter": "E", "amount":12},
+		{"letter": "F", "amount":2},
+		{"letter": "G", "amount":3},
+		{"letter": "H", "amount":2},
+		{"letter": "I", "amount":9},
+		{"letter": "J", "amount":1},
+		{"letter": "K", "amount":1},
+		{"letter": "L", "amount":4},
+		{"letter": "N", "amount":6},
+		{"letter": "O", "amount":8},
+		{"letter": "P", "amount":2},
+		{"letter": "Q", "amount":1},
+		{"letter": "R", "amount":6},
+		{"letter": "S", "amount":4},
+		{"letter": "T", "amount":6},
+		{"letter": "U", "amount":4},
+		{"letter": "V", "amount":2},
+		{"letter": "W", "amount":2},
+		{"letter": "X", "amount":1},
+		{"letter": "Y", "amount":2},
+		{"letter": "Z", "amount":1},
+		{"letter": "_", "amount":2}
+	]
+}; 

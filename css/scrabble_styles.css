@@ -1,0 +1,130 @@
+/* 
+File: scrabble_styles.css
+
+Assignment: HW5, Scrabble
+
+Written by: Max Tighe, 
+    Computer Science Student at UMass Lowell
+    contact: max_tighe@student.uml.edu
+
+Date created: 6/26/2023
+
+Date updated: 7/1/2023
+
+Description: A css stylesheet for
+    index.html to utilize.
+*/
+
+.tile {
+    border-radius: 6px;
+
+    width: 70px;
+    height: 70px;
+}
+
+.board-tile{
+    width: 69px;
+    height: 70px;
+
+    background-color: red;
+
+    margin: 3px;
+
+    float: left;
+}
+
+body {
+
+    /*image was found here:
+    https://www.forbes.com/sites/shelliekarabell/2016/03/04/how-playing-scrabble-can-make-you-more-strategic/?sh=1af533d95321*/
+    background-image: url("../graphics_data/Scrabble_bg.jpg");
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-position: center center;
+}
+
+#wrapper{
+    background-color: rgba(255, 255, 255, 0.496);
+
+    padding-top: 5%;
+
+    padding-bottom: 30%;
+}
+
+#logo{
+    width: 50%;
+    height: auto;
+}
+
+#hand {
+    width: 80%;
+
+    margin: auto;
+    margin-top:5%;
+
+    position:relative;
+}
+
+#holder {
+    position: absolute;
+}
+
+#buttons{
+    margin-top: 5%;
+}
+
+#board {
+    max-width: 100%;
+
+    position: absolute;
+
+    height:auto;
+    width: auto;
+
+    opacity: 100%;
+}
+
+#board-area{
+    margin: auto;
+}
+
+#tile-row, #hand-row{
+    display: flex;
+
+    list-style: inside;
+    list-style-type:none;
+    padding-left: 0px;
+}
+
+.btn {
+    margin-left:3%;
+
+    margin-right:3%;
+
+    margin-bottom: 5%;
+}
+
+#player-score, #board-scoreboard{
+    background-color:gray;
+
+    border-radius: 5px;
+}
+
+#total-scoreboard, #scoreboard{
+    text-align: center;
+
+    color:white;
+
+    font-weight: bold;
+
+    padding:auto;
+
+    padding: 10px;
+}
+
+#logo-area{
+    padding-bottom: 3%;
+}
